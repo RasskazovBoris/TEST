@@ -15,3 +15,24 @@ string[] mainArray(int size)
     }
     return firstStrings;
 }
+string[] result(string[] set, int size)
+{
+    int item = 0;
+    string[] secondStrings = new string[size];
+    for (int i = 0; i < set.Length; i++)
+    {
+        if (set[i].Length <= 3)
+        {
+            secondStrings[item] = set[i];
+            item++;
+        }
+    }
+    return secondStrings;
+}
+string[] array = mainArray(numberOfDigits);
+Console.Write("[");
+Console.Write(String.Join(", ", array));
+Console.Write("] - > ");
+Console.Write("[");
+Console.Write(String.Join(", ", result(array, numOfLinesLessThen3)));
+Console.Write("]");
